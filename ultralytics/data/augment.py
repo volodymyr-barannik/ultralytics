@@ -886,7 +886,7 @@ class Albumentations:
                 A.MedianBlur(p=0.01),
                 A.ToGray(p=0.01),
                 A.CLAHE(p=0.01),
-                A.RandomBrightnessContrast(brightness_limit=(-0.5, -0.5), contrast_limit=0, p=0.6),
+                A.RandomBrightnessContrast(brightness_limit=(-0.3, -0.3), contrast_limit=0, p=0.4),
                 A.RandomGamma(p=0.0),
                 A.ImageCompression(quality_lower=75, p=0.0),
             ]

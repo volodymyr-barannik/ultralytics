@@ -874,7 +874,7 @@ class Albumentations:
         """Initialize the transform object for YOLO bbox formatted params."""
         self.p = p
         self.transform = None
-        prefix = colorstr("albumentations: ")
+        prefix = colorstr("custom albumentations: ")
         try:
             import albumentations as A
 
@@ -886,7 +886,7 @@ class Albumentations:
                 A.MedianBlur(p=0.01),
                 A.ToGray(p=0.01),
                 A.CLAHE(p=0.01),
-                A.RandomBrightnessContrast(p=0.0),
+                A.RandomBrightnessContrast(brightness_limit=(-0.5, -0.5), contrast_limit=0, p=0.6),
                 A.RandomGamma(p=0.0),
                 A.ImageCompression(quality_lower=75, p=0.0),
             ]

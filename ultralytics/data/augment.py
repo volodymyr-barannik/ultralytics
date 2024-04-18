@@ -887,9 +887,9 @@ class Albumentations:
                 A.ToGray(p=0.01),
                 A.CLAHE(p=0.01),
                 A.RandomBrightnessContrast(brightness_limit=(-0.4, 0.1), contrast_limit=(-0.1, 0.2), p=0.5),
-                #A.RandomGamma(p=0.2),
+                A.RandomGamma(p=0.2),
                 A.ImageCompression(quality_lower=75, p=0.1),
-                A.Normalize(),
+                #A.Normalize(),
             ]
             self.transform = A.Compose(T, bbox_params=A.BboxParams(format="yolo", label_fields=["class_labels"]))
 
